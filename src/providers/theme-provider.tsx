@@ -23,7 +23,18 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
             colorBorder: "#1B4242",
           },
           Input: {
-            controlHeight: 40,
+            controlHeight: 45,
+            boxShadow: "none",
+            activeShadow: "none",},
+
+          Select:{
+            controlHeight: 45,
+            boxShadow:"none",
+            controlOutline: "none",
+          },  
+
+          InputNumber: {
+            controlHeight: 45,
             boxShadow: "none",
             activeShadow: "none",},
 
