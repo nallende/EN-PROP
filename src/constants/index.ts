@@ -20,3 +20,26 @@ export const propertyTypes = [
     "Las Condes",
     "Vitacura",
   ];
+
+  export const parkingTypes = [
+    { value: "covered", label: "Covered" },
+    { value: "open", label: "Open" },
+    { value: "none", label: "None" },
+  ];
+
+  export const furnishingTypes = [
+    { value: "furnished", label: "Furnished" },
+    { value: "semi-furnished", label: "Semi-Furnished" },
+    { value: "unfurnished", label: "Unfurnished" },
+  ];
+  
+  export const facingTypes = [
+    { value: "east", label: "East" },
+    { value: "west", label: "West" },
+    { value: "north", label: "North" },
+    { value: "south", label: "South" },
+    { value: "north-east", label: "North-East" },
+    { value: "north-west", label: "North-West" },
+    { value: "south-east", label: "South-East" },
+    { value: "south-west", label: "South-West" },
+  ];
