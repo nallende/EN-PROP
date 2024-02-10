@@ -19,7 +19,10 @@ function PropertiesForm() {
     basic:{},
     location:{},
     amenities : {},
-    media :{},
+    media :{
+      newlyUploadedFiles : [],
+      images : [],
+    },
     contact : {},
   });
 
