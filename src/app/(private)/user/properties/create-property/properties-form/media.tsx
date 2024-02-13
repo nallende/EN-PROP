@@ -2,18 +2,22 @@ import React from 'react'
 import { PropertiesFormStepProps } from '.'
 import { Button, Upload } from 'antd'
 
-function Media({ currentStep, setCurrentStep, finalValues, setFinalValues, }: PropertiesFormStepProps) {
-  const [tempFiles, setTempFiles] = React.useState<any>([])
+function Media({ currentStep,
+  setCurrentStep,
+  finalValues,
+  setFinalValues,
+}: PropertiesFormStepProps) {
+  const [tempFiles, setTempFiles] = React.useState<any[]>([]);
   const onFinish = () => {
     setFinalValues({
       ...finalValues,
-      media:{
+      media: {
         newlyUploadedFiles: tempFiles,
         images: finalValues.media.images,
       },
     });
     setCurrentStep(currentStep + 1)
-   };
+  };
   return (
     <div>
       <Upload
@@ -30,7 +34,8 @@ function Media({ currentStep, setCurrentStep, finalValues, setFinalValues, }: Pr
       </Upload>
       <div className='flex justify-end gap-5'>
 
-        <Button disabled={currentStep === 0} type="default" onClick={() => setCurrentStep(currentStep - 1)}> Back </Button>
+        <Button disabled={currentStep === 0}
+          type="default" onClick={() => setCurrentStep(currentStep - 1)}> Back </Button>
 
         <Button type="primary" onClick={() => setCurrentStep(currentStep + 1)}> Next </Button>
 
@@ -38,4 +43,4 @@ function Media({ currentStep, setCurrentStep, finalValues, setFinalValues, }: Pr
   )
 }
 
-export default Media
+export default Media;

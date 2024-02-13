@@ -21,4 +21,40 @@ model User {
   clerkUserId String   @unique
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  Property    Property[]
 }
+
+//property model
+model Property {
+userid String
+  id          String   @id @default(cuid()) @map("_id") 
+  user        User     @relation(fields: [userid], references: [id])
+  name        String
+  description String
+  location    String
+  type        String
+  status      String
+  price       Float
+  city        String
+  pincode     String
+  address     String
+  landmark    String
+  bedrooms    Int
+  bathrooms   Int
+  balconies   Int
+  furnishing  String
+  parking     String
+  floor       Int
+  area        Float
+  facing      String
+  age         Int
+  image       String[]
+  owner       String
+  ownerName   String
+  ownwerEmail String
+  ownerPhone  String
+  showOwnerContact Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+

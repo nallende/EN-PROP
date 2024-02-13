@@ -1,17 +1,20 @@
 'use client'
 import { Steps } from 'antd';
-import React from 'react'
+import React, { useEffect } from 'react'
 import Basic from './basic';
 import Location from './location';
 import Amenities from './amenities';
 import Media from './media';
 import Contact from './contact';
+import { useRouter } from 'next/navigation';
 
 export interface PropertiesFormStepProps  {
   currentStep : number;
   setCurrentStep : (currentStep : number) => void;
   finalValues: any;
   setFinalValues: (finalValues: any) => void;
+  loading?: boolean;
+  setLoading?: (loading: boolean) => void;
 }
 
 function PropertiesForm() {
@@ -28,11 +31,17 @@ function PropertiesForm() {
 
   const [currentStep = 0, setCurrentStep] = React.useState(0);
 
+  const [loading = false, setLoading] = React.useState(false);
+  
+
+
   const commonPropsForSteps : any = {
     currentStep,
     setCurrentStep,
     finalValues,
     setFinalValues,
+    loading,
+    setLoading,
   };
 
   const steps =[
@@ -57,6 +66,12 @@ function PropertiesForm() {
       content: <Contact {...commonPropsForSteps} />
     },
   ];
+
+  useEffect(() => {
+    console.log('finalValues', finalValues)},
+    [finalValues]);
+
+ 
 
   return (
     <div>
